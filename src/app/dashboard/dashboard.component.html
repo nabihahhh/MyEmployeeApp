@@ -1,7 +1,7 @@
-<h1>Employee</h1>
-<div class="card">
-    <div class="card-head">Lorem ipsum - dashboard</div>
+<h1>Employees</h1>
+<div class="card"  *ngFor="let data of employeesData">
+    <div class="card-head">{{data.name.first + " " + data.name.middle + " " + data.name.last | json}}</div>
     <div class="card-body">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus id magni cumque voluptatem facere unde porro quibusdam delectus esse deleniti sunt ducimus accusamus natus dolorem animi voluptate voluptatibus, minima quaerat.
+        {{data.occupation == "" ? 'None' :  data.occupation| json}}
     </div>
 </div>

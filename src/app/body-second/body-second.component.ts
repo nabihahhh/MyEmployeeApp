@@ -1,16 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { BodySecondComponent } from '../body-second/body-second.component';
 
 @Component({
-  selector: 'app-body',
+  selector: 'app-body-second',
   standalone: true,
-  imports: [CommonModule, RouterModule, BodySecondComponent],
-  templateUrl: './body.component.html',
-  styleUrls: ['./body.component.scss']
+  imports: [CommonModule],
+  templateUrl: './body-second.component.html',
+  styleUrls: ['./body-second.component.scss']
 })
-export class BodyComponent {
+export class BodySecondComponent {
 
   @Input() collapsed = false;
   @Input() screenWidth = 0;

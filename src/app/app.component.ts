@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { BodyComponent } from './body/body.component';
+import { BodySecondComponent } from './body-second/body-second.component';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -12,7 +13,7 @@ interface SideNavToggle {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, SidenavComponent, BodyComponent],
+  imports: [CommonModule, RouterOutlet, SidenavComponent, BodyComponent, BodySecondComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
