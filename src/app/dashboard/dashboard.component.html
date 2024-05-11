@@ -5,12 +5,18 @@
    </div>
 </div>
 <div class="card"  *ngFor="let data of employeesData">
-    <a class="card-link" [routerLink]="['/employee',data.id]"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">
-                <div class="card-head">{{data.name.first + " " + data.name.middle + " " + data.name.last}}</div>
-                <div class="card-body">
-                {{data.occupation == "" ? 'None' :  data.occupation}}
-                </div>
-    </a>
+    <div class="card-img">
+        <img class="rounded-circle shadow-4-strong" alt="avatar2" id = "avatar" src="{{data.images.main}}" />
+    </div>
+    <div>
+        <a class="card-link" [routerLink]="['/employee',data.id]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <div class="card-head">{{data.name.first + " " + data.name.middle + " " + data.name.last}}</div>
+        <div class="card-body">
+        {{data.occupation == "" ? 'None' :  data.occupation}}
+        </div>
+        </a>
+    </div>
+   
 </div>

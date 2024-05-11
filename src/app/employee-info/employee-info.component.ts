@@ -24,6 +24,7 @@ export class EmployeeInfoComponent {
   age: number = 0;
   id: any;
   quotesList: string[] = [];
+  image: string = "";
 
   constructor(private route: ActivatedRoute, private r: Router) {
     r.events.subscribe((val) => {
@@ -108,7 +109,8 @@ export class EmployeeInfoComponent {
         this.homePlanet = x.homePlanet;
         this.occupation = x.occupation;
         this.age = x.age;
-        this.quotesList = x.sayings
+        this.quotesList = x.sayings;
+        this.image = x.images.main;
       }
     });
     // this.filteredEmployeeData = this.employeesData

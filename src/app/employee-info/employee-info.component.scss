@@ -8,6 +8,9 @@
     height: 100vh;
     margin-left: 29rem;
     padding: 3rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
 
     // box-shadow: 0.063rem 0 1.25rem 0 #8690a3;  
 
@@ -67,6 +70,19 @@
 .card-form {
     padding: 8px;
 }
+
+.card-header {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1px;
+
+}
+
+#avatar {
+    max-width: 30%;
+    max-height:30%;
+  }
 
 
 // .container-flex {

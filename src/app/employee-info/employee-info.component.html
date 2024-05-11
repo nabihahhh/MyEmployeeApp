@@ -2,7 +2,15 @@
 <div>
     <app-dashboard></app-dashboard>
     <div class="body" [ngClass]="getBodyClass()">
-        <h1>{{name}}</h1>
+        <div class="card-header">
+            <div class="card-img">
+                <img class="rounded-circle shadow-4-strong" alt="avatar2" id = "avatar" src="{{image}}" />
+            </div>
+            <div>
+                <h1>{{name}}</h1>
+            </div>
+        </div>
+
         <div class="card">
         <div class="card-head">Personal Info</div>
         <div class="card-body">
