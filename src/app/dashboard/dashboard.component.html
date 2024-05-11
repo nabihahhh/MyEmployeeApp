@@ -8,9 +8,9 @@
     <a class="card-link" [routerLink]="['/employee',data.id]"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}">
-                <div class="card-head">{{data.name.first + " " + data.name.middle + " " + data.name.last | json}}</div>
+                <div class="card-head">{{data.name.first + " " + data.name.middle + " " + data.name.last}}</div>
                 <div class="card-body">
-                {{data.occupation == "" ? 'None' :  data.occupation| json}}
+                {{data.occupation == "" ? 'None' :  data.occupation}}
                 </div>
     </a>
 </div>
