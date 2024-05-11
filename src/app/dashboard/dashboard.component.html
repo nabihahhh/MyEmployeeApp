@@ -1,7 +1,16 @@
 <h1>Employees</h1>
+<div class="card">
+   <div class="search">
+    <!-- <input #searchQuery type="text" (input)="onSearchUpdated(searchQuery.value)" /> -->
+   </div>
+</div>
 <div class="card"  *ngFor="let data of employeesData">
-    <div class="card-head">{{data.name.first + " " + data.name.middle + " " + data.name.last | json}}</div>
-    <div class="card-body">
-        {{data.occupation == "" ? 'None' :  data.occupation| json}}
-    </div>
+    <a class="card-link" [routerLink]="['/employee',data.id]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                <div class="card-head">{{data.name.first + " " + data.name.middle + " " + data.name.last | json}}</div>
+                <div class="card-body">
+                {{data.occupation == "" ? 'None' :  data.occupation| json}}
+                </div>
+    </a>
 </div>

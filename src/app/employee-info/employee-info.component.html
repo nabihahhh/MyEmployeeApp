@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div>
+    <app-dashboard></app-dashboard>
+    <div class="body" [ngClass]="getBodyClass()">
+        <h1>{{name}}</h1>
+        <div class="card">
+        <div class="card-head">Personal Info</div>
+        <div class="card-body">
+            <div class="card-form">
+                <label class="form-label" for="formControlDisabled">Gender</label>
+                <input
+                class="form-control"
+                id="formControlDisabled"
+                type="text"
+                placeholder="{{gender}}"
+                readonly/>
+            </div>
+            
+
+            <div class="card-form">
+                <label class="form-label" for="formControlDisabled">Species</label>
+                <input
+                class="form-control"
+                id="formControlDisabled"
+                type="text"
+                placeholder="{{species}}"
+                readonly/>
+            </div>
+
+            <div class="card-form">
+                <label class="form-label" for="formControlDisabled">Home Planet</label>
+                <input
+                class="form-control"
+                id="formControlDisabled"
+                type="text"
+                placeholder="{{homePlanet}}"
+                readonly/>
+            </div>
+
+            <div class="card-form">
+                <label class="form-label" for="formControlDisabled">Occupation</label>
+                <input
+                class="form-control"
+                id="formControlDisabled"
+                type="text"
+                placeholder="{{occupation}}"
+                readonly/>
+            </div>
+
+            <div class="card-form">
+                <label class="form-label" for="formControlDisabled">Age</label>
+                <input
+                class="form-control"
+                id="formControlDisabled"
+                type="text"
+                placeholder="{{age}}"
+                readonly/>
+            </div>
+
+            <div class="card-form">
+                <label class="form-label" for="formControlDisabled">Quotes</label>
+                <input
+                class="form-control"
+                id="formControlDisabled"
+                type="text"
+                placeholder="{{quotesList[0]}}"
+                readonly/>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
