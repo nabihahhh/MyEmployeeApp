@@ -4,7 +4,8 @@
     <!-- <input #searchQuery type="text" (input)="onSearchUpdated(searchQuery.value)" /> -->
    </div>
 </div>
-<div class="card"  *ngFor="let data of employeesData">
+<div class="card"  *ngFor="let data of employeesData | paginate: 
+{itemsPerPage:10, currentPage: p}">
     <div class="card-img">
         <img class="rounded-circle shadow-4-strong" alt="avatar2" id = "avatar" src="{{data.images.main}}" />
     </div>
@@ -19,4 +20,9 @@
         </a>
     </div>
    
+</div>
+<div class="container">
+    <div class="pagination">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>
 </div>
