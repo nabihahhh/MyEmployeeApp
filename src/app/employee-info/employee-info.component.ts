@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,7 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, DashboardComponent],
   templateUrl: './employee-info.component.html',
-  styleUrls: ['./employee-info.component.scss']
+  styleUrls: ['./employee-info.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeeInfoComponent {
 
@@ -25,8 +26,9 @@ export class EmployeeInfoComponent {
   id: any;
   quotesList: string[] = [];
   image: string = "";
+  randomQuotes: string[] = [];  
 
-  constructor(private route: ActivatedRoute, private r: Router) {
+  constructor(private route: ActivatedRoute, private r: Router, private cd:ChangeDetectorRef) {
     r.events.subscribe((val) => {
       // see also 
       this.getInfo();
@@ -113,7 +115,21 @@ export class EmployeeInfoComponent {
         this.image = x.images.main;
       }
     });
+
+    this.getRandomQuotes();
     // this.filteredEmployeeData = this.employeesData
+  }
+
+  getRandomQuotes() {
+
+    this.randomQuotes = [];
+    for (let i = 0; i < 3; i++) {
+      const ind: number =
+      Math.floor(Math.random() * this.quotesList.length);
+      const result: string = this.quotesList[ind];
+      this.randomQuotes.push(result);
+    }
+    this.cd.detectChanges();
   }
   
 }
