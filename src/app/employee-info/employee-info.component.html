@@ -12,7 +12,9 @@
         </div>
 
         <div class="card">
-        <div class="card-head">Personal Info</div>
+        <div class="card-head">
+            <h5>Personal Info</h5>
+        </div>
         <div class="card-body">
             <div class="card-form">
                 <label class="form-label" for="formControlDisabled">Gender</label>
@@ -65,14 +67,13 @@
                 readonly/>
             </div>
 
+            <br><br>
             <div class="card-form">
-                <label class="form-label" for="formControlDisabled">Quotes</label>
-                <input
-                class="form-control"
-                id="formControlDisabled"
-                type="text"
-                placeholder="{{quotesList[0]}}"
-                readonly/>
+                <h5>Quotes</h5>
+                <br>
+                <ol class="list-group list-group-numbered" *ngFor="let item of quotesList">
+                    <li class="list-group-item">{{item}}</li>
+                  </ol>
             </div>
         </div>
     </div>
