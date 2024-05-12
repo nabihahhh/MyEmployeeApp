@@ -2,6 +2,7 @@ import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,11 @@ export class DashboardComponent {
   searchValue: string = "";
   speciesData: string[] = ["Human", "Martian", "Robot", "Mutant", "Decapodian", "Omicronian", "Amphibiosans"];
   genderData: string[] = ["Male", "Female"];
+  currentFilter: string = "";
+  previousFilter: string = "";
+  filterGender = '';
+  filterSpecies = '';
+  filterName = '';
   // searchTerm = "";
   // users$!: Observable<any[]>;
   // filteredUsers$!: Observable<any[]>;
@@ -51,12 +57,30 @@ export class DashboardComponent {
     : this.originalData;
   }
 
-  addFilter() {
+  addFilter(searchValue: any, speciesValue: any, genderValue: any) {
+
+    // var searchVal  = searchValue != "" ? (searchValue.target as HTMLTextAreaElement).value : "";
+    var speciesVal = speciesValue != "" ? (speciesValue.target as HTMLTextAreaElement).value : "";
+    var genderVal = genderValue != "" ? (genderValue.target as HTMLTextAreaElement).value : "";
+
+    // this.filterName = searchVal != "" ? searchVal : this.filterName;
+    this.filterGender = genderVal != "" ? genderVal : this.filterGender;
+    this.filterSpecies = speciesVal != "" ? speciesVal : this.filterSpecies;
+
+    // var test = this.originalData.filter(item => item.gender.includes(this.filterGender) && item.species.includes(this.filterSpecies));
+
+    this.filteredEmployeeData = this.filterGender || this.filterSpecies  || this.filterName ? this.originalData.filter(item => item.gender.includes(this.filterGender) 
+    && item.species.includes(this.filterSpecies)
+    && item.name.toLowerCase().includes(this.searchValue))
+    : this.originalData;
     this.isFiltered = true;
+
   }
 
   clearFilter() {
     this.isFiltered = false;
+    this.currentFilter = "";
+    this.previousFilter = "";
     this.filteredEmployeeData = this.originalData;
   }
 

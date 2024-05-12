@@ -3,22 +3,22 @@
 <div class="card">
    <div class="search">  
     <input class="searchQuery" type="text"  placeholder="Search by Name" (change)="assignSearchValue($event)" />
-    <button class="searchButton" (click)= "filterSearch(originalData)">Search</button>
+    <button class="searchButton" (click)= "addFilter($event, '', '')">Search</button>
    </div>
 </div>
 
 <div class="card">
     <div class="col">
-            <select #teams class="form-select" aria-label="Default select example" (change)="addFilter()">
+            <select #teams class="form-select" aria-label="Default select example" (change)="addFilter('', $event,'')">
                 <option default>Select Species</option>
-                <option  *ngFor="let data of speciesData">{{data}}</option>
+                <option  *ngFor="let data of speciesData" [value]="data">{{data}}</option>
             </select>
     </div>
 
     <div class="col">
-        <select #teams class="form-select" aria-label="Default select example" (change)="addFilter()">
+        <select #teams class="form-select" aria-label="Default select example" (change)="addFilter('', '', $event)">
             <option default [value]="0">Select Gender</option>
-            <option  *ngFor="let data of genderData" [value]="0">{{data}}</option>
+            <option  *ngFor="let data of genderData" [value]="data">{{data}}</option>
         </select>
     </div>
         
