@@ -1,35 +1,30 @@
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
-  }
+
+  // .searchTerm {
+  //   width: 100%;
+  //   // border: 3px solid #FFC300;
+  //   border: none;
+  //   padding: 5px;
+  //   height: 40px;
+  //   border-radius: 5px 0 0 5px;
+  //   outline: none;
+  //   color: #000;
+  // }
   
-  .searchTerm {
-    width: 100%;
-    // border: 3px solid #FFC300;
-    border: none;
-    padding: 5px;
-    height: 40px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #000;
-  }
+  // .searchTerm:focus{
+  //   color: #616161;
+  // }
   
-  .searchTerm:focus{
-    color: #616161;
-  }
-  
-  .searchButton {
-    width: 40px;
-    height: 36px;
-    border: 1px solid #FFC300;
-    background: #FFC300;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
+  // .searchButton {
+  //   width: 40px;
+  //   height: 36px;
+  //   border: 1px solid #FFC300;
+  //   background: #FFC300;
+  //   text-align: center;
+  //   color: #fff;
+  //   border-radius: 0 5px 5px 0;
+  //   cursor: pointer;
+  //   font-size: 20px;
+  // }
   
   /*Resize the wrap to see the search bar change!*/
   .wrap{
@@ -43,8 +38,35 @@
   .card {
     display: grid;
     align-items: center; 
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr; 
+    border-radius:10px;
+    border-color: #fff;
+
+    .search {
+      width: 100%;
+      position: relative;
+      display: flex;
+  
+      .searchQuery {
+        border: none;
+        outline: none;
+      }
+    }
+
+    .clear-button {
+      background-color:#FFC300;
+      border-radius:18px;
+      border:6px solid #FFC300;
+      display:inline-block;
+      cursor:pointer;
+      color:#000;
+      padding:2px;
+      text-shadow:0px 1px 0px #f7d660;
+      width: 86px;
+      height: auto;
+      font-size: small;
+      margin-left: 0rem;
+      }
 
     
     .card-link {

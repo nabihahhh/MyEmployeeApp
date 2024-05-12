@@ -1,9 +1,36 @@
+
 <h1>Employees</h1>
 <div class="card">
    <div class="search">
-    <!-- <input #searchQuery type="text" (input)="onSearchUpdated(searchQuery.value)" /> -->
+    <input class="searchQuery" type="text"  placeholder="Search" />
    </div>
 </div>
+
+<div class="card">
+    <div class="col">
+            <select #teams>
+                <option default>Pick a team</option>
+                <option>Lakers</option>
+                <option>Miami</option>
+                <option>Cleveland</option>
+            </select>
+    </div>
+
+    <div class="col">
+        <select #teams>
+            <option default>Pick a team</option>
+            <option>Lakers</option>
+            <option>Miami</option>
+            <option>Cleveland</option>
+        </select>
+    </div>
+        
+    <!-- <div class="clear-filter">
+     <button class="clear-button">Clear filters</button>    
+    </div> -->
+</div>
+
+
 <div class="card"  *ngFor="let data of employeesData | paginate: 
 {itemsPerPage:10, currentPage: p}">
     <div class="card-img">

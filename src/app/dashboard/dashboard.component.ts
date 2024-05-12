@@ -30,14 +30,14 @@ export class DashboardComponent {
   }
 
   
-  // searchQuery = signal<string>('');
-  // items = computed(() => {
-  //   const sq = this.searchQuery();
-  //   return this.employeesData.filter((x: string | string[]) => x.includes(sq));
-  // });
+  searchQuery = signal<string>('');
+  items = computed(() => {
+    const sq = this.searchQuery();
+    return this.employeesData.filter((x: string | string[]) => x.includes(sq));
+  });
 
-  // onSearchUpdated(sq: string) {
-  //   this.searchQuery.set(sq);
-  // }
+  onSearchUpdated(sq: string) {
+    this.searchQuery.set(sq);
+  }
 
 }

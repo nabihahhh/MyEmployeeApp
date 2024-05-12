@@ -13,78 +13,78 @@
         </div>
 
         <div class="card">
-        <div class="card-head">
-            <h5>Personal Info</h5>
-        </div>
-        <div class="card-body">
-            <div class="card-form">
-                <label class="form-label" for="formControlDisabled">Gender</label>
-                <input
-                class="form-control"
-                id="formControlDisabled"
-                type="text"
-                placeholder="{{gender}}"
-                readonly/>
+            <div class="card-head">
+                <h5>Personal Info</h5>
             </div>
-            
-
-            <div class="card-form">
-                <label class="form-label" for="formControlDisabled">Species</label>
-                <input
-                class="form-control"
-                id="formControlDisabled"
-                type="text"
-                placeholder="{{species}}"
-                readonly/>
-            </div>
-
-            <div class="card-form">
-                <label class="form-label" for="formControlDisabled">Home Planet</label>
-                <input
-                class="form-control"
-                id="formControlDisabled"
-                type="text"
-                placeholder="{{homePlanet}}"
-                readonly/>
-            </div>
-
-            <div class="card-form">
-                <label class="form-label" for="formControlDisabled">Occupation</label>
-                <input
-                class="form-control"
-                id="formControlDisabled"
-                type="text"
-                placeholder="{{occupation}}"
-                readonly/>
-            </div>
-
-            <div class="card-form">
-                <label class="form-label" for="formControlDisabled">Age</label>
-                <input
-                class="form-control"
-                id="formControlDisabled"
-                type="text"
-                placeholder="{{age}}"
-                readonly/>
-            </div>
-
-            <br><br>
-            <div class="card-form">
-                <div class="quotes-head">
-                    <div>
-                        <h5>Quotes</h5>
-                    </div>
-                    <div class="refresh-icon" (click)="getRandomQuotes()">
-                        <i class="fa fa-refresh" ></i>
-                    </div>
+            <div class="card-body">
+                <div class="card-form">
+                    <label class="form-label" for="formControlDisabled">Gender</label>
+                    <input
+                    class="form-control"
+                    id="formControlDisabled"
+                    type="text"
+                    placeholder="{{gender}}"
+                    readonly/>
                 </div>
-                <br>
-                <ol class="list-group list-group-numbered" *ngFor="let item of randomQuotes">
-                    <li class="list-group-item">{{item}}</li>
-                  </ol>
+                
+
+                <div class="card-form">
+                    <label class="form-label" for="formControlDisabled">Species</label>
+                    <input
+                    class="form-control"
+                    id="formControlDisabled"
+                    type="text"
+                    placeholder="{{species}}"
+                    readonly/>
+                </div>
+
+                <div class="card-form">
+                    <label class="form-label" for="formControlDisabled">Home Planet</label>
+                    <input
+                    class="form-control"
+                    id="formControlDisabled"
+                    type="text"
+                    placeholder="{{homePlanet}}"
+                    readonly/>
+                </div>
+
+                <div class="card-form">
+                    <label class="form-label" for="formControlDisabled">Occupation</label>
+                    <input
+                    class="form-control"
+                    id="formControlDisabled"
+                    type="text"
+                    placeholder="{{occupation}}"
+                    readonly/>
+                </div>
+
+                <div class="card-form">
+                    <label class="form-label" for="formControlDisabled">Age</label>
+                    <input
+                    class="form-control"
+                    id="formControlDisabled"
+                    type="text"
+                    placeholder="{{age}}"
+                    readonly/>
+                </div>
+
+                <br><br>
+                <div class="card-form">
+                    <div class="quotes-head">
+                        <div>
+                            <h5>Quotes</h5>
+                        </div>
+                        <div class="refresh-icon" (click)="getRandomQuotes()">
+                            <i class="fa fa-refresh" ></i>
+                        </div>
+                    </div>
+                    <br>
+                    <ol class="list-group list-group-numbered" *ngFor="let item of randomQuotes">
+                        <li class="list-group-item">{{item}}</li>
+                    </ol>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </div>
 
