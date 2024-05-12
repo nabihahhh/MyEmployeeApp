@@ -42,6 +42,10 @@
     border-radius:10px;
     border-color: #fff;
 
+    .form-select {
+
+    }
+
     .search {
       width: 100%;
       position: relative;
@@ -50,6 +54,20 @@
       .searchQuery {
         border: none;
         outline: none;
+      }
+
+      .searchButton {  
+        background-color:#FFC300;
+        border-radius:18px;
+        border:6px solid #FFC300;
+        display:inline-block;
+        cursor:pointer;
+        color:#000;
+        padding:2px;
+        width: 61px;
+        height: auto;
+        font-size: small;
+        margin-left: 5rem;
       }
     }
 
@@ -61,11 +79,10 @@
       cursor:pointer;
       color:#000;
       padding:2px;
-      text-shadow:0px 1px 0px #f7d660;
-      width: 86px;
+      width: 61px;
       height: auto;
       font-size: small;
-      margin-left: 0rem;
+      margin-left: -1rem;
       }
 
     

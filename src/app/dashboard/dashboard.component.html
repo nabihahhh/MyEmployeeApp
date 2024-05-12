@@ -1,49 +1,46 @@
 
 <h1>Employees</h1>
 <div class="card">
-   <div class="search">
-    <input class="searchQuery" type="text"  placeholder="Search" (keydown)="filterSearch(employeesData, '',$event.key)"/>
+   <div class="search">  
+    <input class="searchQuery" type="text"  placeholder="Search by Name" (change)="assignSearchValue($event)" />
+    <button class="searchButton" (click)= "filterSearch(originalData)">Search</button>
    </div>
 </div>
 
 <div class="card">
     <div class="col">
-            <select #teams>
-                <option default>Pick a team</option>
-                <option>Lakers</option>
-                <option>Miami</option>
-                <option>Cleveland</option>
+            <select #teams class="form-select" aria-label="Default select example">
+                <option default>Select Species</option>
+                <option  *ngFor="let data of speciesData">{{data}}</option>
             </select>
     </div>
 
     <div class="col">
-        <select #teams>
-            <option default>Pick a team</option>
-            <option>Lakers</option>
-            <option>Miami</option>
-            <option>Cleveland</option>
+        <select #teams class="form-select" aria-label="Default select example">
+            <option default [value]="0">Select Gender</option>
+            <option  *ngFor="let data of genderData" [value]="0">{{data}}</option>
         </select>
     </div>
         
-    <!-- <div class="clear-filter">
-     <button class="clear-button">Clear filters</button>    
-    </div> -->
+    <div class="clear-filter" *ngIf="isFiltered">
+     <button class="clear-button" (click)="clearFilter()">Clear all</button>    
+    </div>
 </div>
 
 
-<div class="card"  *ngFor="let data of filteredEmployeeData | paginate: 
+<div class="card"  *ngFor="let data of filteredEmployeeData |  paginate: 
 {itemsPerPage:10, currentPage: p}">
     <div class="card-img">
-        <img class="rounded-circle shadow-4-strong" alt="avatar2" id = "avatar" src="{{data.images.main}}" />
+        <img class="rounded-circle shadow-4-strong" alt="avatar2" id = "avatar" src="{{data.image}}" />
     </div>
     <div>
         <a class="card-link" [routerLink]="['/employee',data.id]"
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">
-        <div class="card-head">{{data.name.first + " " + data.name.middle + " " + data.name.last}}</div>
+        [routerLinkActiveOptions]="{exact: true}"> 
+        <div class="card-head">{{data.name}}</div>
         <div class="card-body">
-        {{data.occupation == "" ? 'None' :  data.occupation}}
-        </div>
+        {{data.occupation}}
+        </div> 
         </a>
     </div>
    
