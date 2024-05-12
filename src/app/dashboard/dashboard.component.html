@@ -9,14 +9,14 @@
 
 <div class="card">
     <div class="col">
-            <select #teams class="form-select" aria-label="Default select example">
+            <select #teams class="form-select" aria-label="Default select example" (change)="addFilter()">
                 <option default>Select Species</option>
                 <option  *ngFor="let data of speciesData">{{data}}</option>
             </select>
     </div>
 
     <div class="col">
-        <select #teams class="form-select" aria-label="Default select example">
+        <select #teams class="form-select" aria-label="Default select example" (change)="addFilter()">
             <option default [value]="0">Select Gender</option>
             <option  *ngFor="let data of genderData" [value]="0">{{data}}</option>
         </select>

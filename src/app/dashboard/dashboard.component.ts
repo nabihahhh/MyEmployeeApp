@@ -2,9 +2,6 @@ import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { NgArrayPipesModule } from 'ngx-pipes';
-import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -52,6 +49,10 @@ export class DashboardComponent {
     this.isFiltered = true;
     this.filteredEmployeeData = this.searchValue != 'backspace'? data.filter(item => item.name.toLowerCase().includes(this.searchValue))
     : this.originalData;
+  }
+
+  addFilter() {
+    this.isFiltered = true;
   }
 
   clearFilter() {
