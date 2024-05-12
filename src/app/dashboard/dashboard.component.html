@@ -2,7 +2,7 @@
 <h1>Employees</h1>
 <div class="card">
    <div class="search">
-    <input class="searchQuery" type="text"  placeholder="Search" />
+    <input class="searchQuery" type="text"  placeholder="Search" (keydown)="filterSearch(employeesData, '',$event.key)"/>
    </div>
 </div>
 
@@ -31,7 +31,7 @@
 </div>
 
 
-<div class="card"  *ngFor="let data of employeesData | paginate: 
+<div class="card"  *ngFor="let data of filteredEmployeeData | paginate: 
 {itemsPerPage:10, currentPage: p}">
     <div class="card-img">
         <img class="rounded-circle shadow-4-strong" alt="avatar2" id = "avatar" src="{{data.images.main}}" />

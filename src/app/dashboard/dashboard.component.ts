@@ -15,6 +15,7 @@ export class DashboardComponent {
 
   employeesData: any;
   filteredEmployeeData: any[] = [];
+  isFiltered: boolean = false;
   p: number = 1;
 
   ngOnInit() {
@@ -23,21 +24,20 @@ export class DashboardComponent {
     .then(resp => resp.json())
     .then(data => 
       this.employeesData = data
+    ).then(data =>
+      this.filteredEmployeeData = this.employeesData
     );
-    this.filteredEmployeeData = this.employeesData;
-    console.log(this.employeesData)
 
   }
 
   
-  searchQuery = signal<string>('');
-  items = computed(() => {
-    const sq = this.searchQuery();
-    return this.employeesData.filter((x: string | string[]) => x.includes(sq));
-  });
-
-  onSearchUpdated(sq: string) {
-    this.searchQuery.set(sq);
+  filterSearch(data: any[], filterProperty: string, filter: any){
+    this.filteredEmployeeData = [];
+    this.isFiltered = true;
+    const filterValue = filter.toString().toLowerCase();
+    this.filteredEmployeeData = filterValue != 'backspace' ? data.filter(item => item.name.first.includes(filterValue)) || 
+    data.filter(item => item.name.middle.includes(filterValue)) || data.filter(item => item.name.last.includes(filterValue))
+    : data;
   }
 
 }
