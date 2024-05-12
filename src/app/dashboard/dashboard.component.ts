@@ -51,28 +51,25 @@ export class DashboardComponent {
     this.searchValue = (filter.target as HTMLTextAreaElement).value.toLowerCase();
   }
 
-  filterSearch(data: any[]){
+  filterSearch(){
     this.isFiltered = true;
-    this.filteredEmployeeData = this.searchValue != 'backspace'? data.filter(item => item.name.toLowerCase().includes(this.searchValue))
+    this.filteredEmployeeData = this.searchValue != 'backspace'? this.filteredEmployeeData.filter(item => item.name.toLowerCase().includes(this.searchValue))
     : this.originalData;
   }
 
   addFilter(searchValue: any, speciesValue: any, genderValue: any) {
 
-    // var searchVal  = searchValue != "" ? (searchValue.target as HTMLTextAreaElement).value : "";
     var speciesVal = speciesValue != "" ? (speciesValue.target as HTMLTextAreaElement).value : "";
     var genderVal = genderValue != "" ? (genderValue.target as HTMLTextAreaElement).value : "";
 
-    // this.filterName = searchVal != "" ? searchVal : this.filterName;
     this.filterGender = genderVal != "" ? genderVal : this.filterGender;
     this.filterSpecies = speciesVal != "" ? speciesVal : this.filterSpecies;
 
-    // var test = this.originalData.filter(item => item.gender.includes(this.filterGender) && item.species.includes(this.filterSpecies));
-
-    this.filteredEmployeeData = this.filterGender || this.filterSpecies  || this.filterName ? this.originalData.filter(item => item.gender.includes(this.filterGender) 
-    && item.species.includes(this.filterSpecies)
-    && item.name.toLowerCase().includes(this.searchValue))
+    this.filteredEmployeeData = this.filterGender || this.filterSpecies ? this.originalData.filter(item => item.gender.includes(this.filterGender) 
+    && item.species.includes(this.filterSpecies))
     : this.originalData;
+
+    this.filterSearch();
     this.isFiltered = true;
 
   }
